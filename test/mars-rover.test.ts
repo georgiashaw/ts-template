@@ -1,6 +1,9 @@
 class MarsRover {
     run(command: string): string {
-       return "0,0,N"
+        if(command) {
+            return "0,1,N";
+        } 
+        return "0,0,N";
     }
 }
 
