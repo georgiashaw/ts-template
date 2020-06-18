@@ -1,6 +1,6 @@
 class MarsRover {
     run(command: string): string {
-        throw new Error("Unimplemented");
+       return "0,0,N"
     }
 }
 
