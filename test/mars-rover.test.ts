@@ -27,4 +27,10 @@ describe("MarsRover", () => {
         const location = marsRover.run("MM");
         expect(location).toEqual("0,2,N");
     });
+
+    it("should move forwards thrice to location 0,3,N", () => {
+        const marsRover = new MarsRover();
+        const location = marsRover.run("MMM");
+        expect(location).toEqual("0,3,N");
+    });
 });
