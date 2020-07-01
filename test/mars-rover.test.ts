@@ -15,7 +15,10 @@ class MarsRover {
             this.yAxis = "3"
         } else if (command === `${this.RIGHT}`) {
             return `${this.xAxis},${this.yAxis},E`
+        } else if (command === `${this.RIGHT}${this.RIGHT}`) {
+            return `${this.xAxis},${this.yAxis},S`
         }
+
         return `${this.xAxis},${this.yAxis},${this.NORTH}`;
     }
 }
