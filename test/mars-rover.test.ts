@@ -49,21 +49,13 @@ describe("MarsRover", () => {
         expect(location).toEqual(expectedOutput);
     })
 
-    it("should rotate once right to face east", () => {
+    it.each([
+        ["R", "0,0,E"],
+        ["RR", "0,0,S"],
+        ["RRR", "0,0,W"]
+    ])("It rotates right, input: %s, expected output: %s", (input, expectedOutput) => {
         const marsRover = new MarsRover();
-        const location = marsRover.run("R");
-        expect(location).toEqual("0,0,E");
-    });
-
-    it("should rotate twice right to face south", () => {
-        const marsRover = new MarsRover();
-        const location = marsRover.run("RR");
-        expect(location).toEqual("0,0,S");
-    });
-
-    it("should rotate thrice right to face west", () => {
-        const marsRover = new MarsRover();
-        const location = marsRover.run("RRR");
-        expect(location).toEqual("0,0,W");
-    });
+        const location = marsRover.run(input);
+        expect(location).toEqual(expectedOutput);
+    })
 });
