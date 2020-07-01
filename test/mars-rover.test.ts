@@ -43,4 +43,10 @@ describe("MarsRover", () => {
         const location = marsRover.run("R");
         expect(location).toEqual("0,0,E");
     });
-});
+    it("should rotate twice right to face south", () => {
+        const marsRover = new MarsRover();
+        const location = marsRover.run("RR");
+        expect(location).toEqual("0,0,S");
+    });
+}
+);
