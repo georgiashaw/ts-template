@@ -6,17 +6,23 @@ class MarsRover {
     xAxis = "0";
     yAxis =  "0";
 
+    moveForward (command) {
+            if(command === `${this.MOVE}${this.MOVE}`) {
+                this.yAxis = "2";
+            } else if (command === `${this.MOVE}`) {
+                this.yAxis = "1";
+            } else if (command === `${this.MOVE}${this.MOVE}${this.MOVE}`) {
+                this.yAxis = "3";
+            }
+    }
+
     run(command: string): string {
-        if(command === `${this.MOVE}${this.MOVE}`) {
-            this.yAxis = "2"
-        } else if (command === `${this.MOVE}`) {
-            this.yAxis = "1"
-        } else if (command === `${this.MOVE}${this.MOVE}${this.MOVE}`) {
-            this.yAxis = "3"
+        if(command.charAt(0) == this.MOVE) {
+            this.moveForward(command)
         } else if (command === `${this.RIGHT}`) {
-            return `${this.xAxis},${this.yAxis},E`
+            return `${this.xAxis},${this.yAxis},E`;
         } else if (command === `${this.RIGHT}${this.RIGHT}`) {
-            return `${this.xAxis},${this.yAxis},S`
+            return `${this.xAxis},${this.yAxis},S`;
         }
 
         return `${this.xAxis},${this.yAxis},${this.NORTH}`;
