@@ -23,6 +23,8 @@ class MarsRover {
             return `${this.xAxis},${this.yAxis},E`;
         } else if (command === `${this.RIGHT}${this.RIGHT}`) {
             return `${this.xAxis},${this.yAxis},S`;
+        } else if (command === `${this.RIGHT}${this.RIGHT}${this.RIGHT}`) {
+            return `${this.xAxis},${this.yAxis},W`;
         }
 
         return `${this.xAxis},${this.yAxis},${this.NORTH}`;
