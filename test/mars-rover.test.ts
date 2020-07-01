@@ -18,24 +18,6 @@ describe("MarsRover", () => {
         expect(location).toEqual("0,0,N");
     });
 
-    it("should move forwards twice to location 0,2,N", () => {
-        const marsRover = new MarsRover();
-        const location = marsRover.run("MM");
-        expect(location).toEqual("0,2,N");
-    });
-
-    it("should move forwards thrice to location 0,3,N", () => {
-        const marsRover = new MarsRover();
-        const location = marsRover.run("MMM");
-        expect(location).toEqual("0,3,N");
-    });
-
-    it("should move over the northern edge to return to the bottom", () => {
-        const marsRover = new MarsRover();
-        const location = marsRover.run("MMMMMMMMMM");
-        expect(location).toEqual("0,0,N");
-    });
-
     it.each([
         ["M", "0,1,N"],
         ["MM", "0,2,N"],
@@ -47,4 +29,9 @@ describe("MarsRover", () => {
         expect(location).toEqual(expectedOutput);
     })
 
+    it("should rotate once right to face east", () => {
+        const marsRover = new MarsRover();
+        const location = marsRover.run("R");
+        expect(location).toEqual("0,0,E");
+    });
 });
