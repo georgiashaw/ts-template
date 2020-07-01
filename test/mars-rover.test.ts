@@ -1,15 +1,22 @@
 class MarsRover {
+
+    NORTH = "N";
+    MOVE = "M";
+    RIGHT = "R";
+    xAxis = "0";
+    yAxis =  "0";
+
     run(command: string): string {
-        if(command === "MM") {
-            return "0,2,N";
-        } else if (command === "M") {
-            return "0,1,N";
-        } else if (command === "MMM") {
-            return "0,3,N";
-        } else if (command === "R") {
-            return "0,0,E";
+        if(command === `${this.MOVE}${this.MOVE}`) {
+            this.yAxis = "2"
+        } else if (command === `${this.MOVE}`) {
+            this.yAxis = "1"
+        } else if (command === `${this.MOVE}${this.MOVE}${this.MOVE}`) {
+            this.yAxis = "3"
+        } else if (command === `${this.RIGHT}`) {
+            return `${this.xAxis},${this.yAxis},E`
         }
-        return "0,0,N";
+        return `${this.xAxis},${this.yAxis},${this.NORTH}`;
     }
 }
 
