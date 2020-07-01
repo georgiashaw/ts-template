@@ -6,6 +6,8 @@ class MarsRover {
             return "0,1,N";
         } else if (command === "MMM") {
             return "0,3,N";
+        } else if (command === "R") {
+            return "0,0,E";
         }
         return "0,0,N";
     }
