@@ -52,8 +52,20 @@ describe("MarsRover", () => {
     it.each([
         ["R", "0,0,E"],
         ["RR", "0,0,S"],
-        ["RRR", "0,0,W"]
+        ["RRR", "0,0,W"],
+        ["RRRR", "0,0,N"]
     ])("It rotates right, input: %s, expected output: %s", (input, expectedOutput) => {
+        const marsRover = new MarsRover();
+        const location = marsRover.run(input);
+        expect(location).toEqual(expectedOutput);
+    })
+
+    it.each([
+        ["L", "0,0,W"],
+        ["LL", "0,0,S"],
+        ["LLL", "0,0,E"],
+        ["LLLL", "0,0,N"]
+    ])("It rotates left, input: %s, expected output: %s", (input, expectedOutput) => {
         const marsRover = new MarsRover();
         const location = marsRover.run(input);
         expect(location).toEqual(expectedOutput);
